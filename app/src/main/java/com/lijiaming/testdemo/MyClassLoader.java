@@ -39,7 +39,6 @@ public class MyClassLoader extends ClassLoader{
     /**
      * 通过package找要加载的class
      */
-
     @Override
     protected Class<?> findClass(String name) throws ClassNotFoundException {
 
@@ -54,7 +53,6 @@ public class MyClassLoader extends ClassLoader{
             fis = new FileInputStream(clsFile);
 
             int data = 0;
-
 
             while ((data = fis.read()) != -1){
                 baos.write(data);
@@ -88,6 +86,7 @@ public class MyClassLoader extends ClassLoader{
         }
         return super.loadClass(name,resolve);
     }
+
 
     /**
      * 替换MyClassLoader为默认ClassLoader
